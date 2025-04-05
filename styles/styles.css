@@ -26,7 +26,11 @@
 }
 .heading-container {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-container {
+  display: flex;
   align-items: center;
   gap: 1rem;
 }
@@ -56,10 +60,10 @@
   align-items: center;
   justify-content: center;
   padding: 0.2rem 0.3rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   transition: all 30ms;
 }
-.link:hover{
+.link:hover {
   background-color: plum;
 }
 .input-wrapper {
@@ -96,4 +100,68 @@
 .input-wrapper:focus-within {
   border-color: #3b82f6;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.success-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.success-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+}
+
+.success-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #10B981;
+  animation: scaleIn 0.3s ease;
+}
+
+.success-message {
+  color: #059669;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { 
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }

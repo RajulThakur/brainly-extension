@@ -66,8 +66,10 @@ function renderNavigationLinks() {
 function renderMainView() {
   return `
     <div class="heading-container">
-      <img src="./public/brain.png" class="image" />
-      <h1 id="heading">Brainly</h1>
+      <div class="logo-container">
+        <img src="./public/brain.png" class="image" />
+        <h1 id="heading">Brainly</h1>
+      </div>
     </div>
     <div class="input-container">
       <div class="input-wrapper">
@@ -87,6 +89,35 @@ async function getCurrentTabInfo() {
       resolve(response);
     });
   });
+}
+
+function renderSuccess() {
+  const urlInput = document.querySelector(".url-input");
+  urlInput.value = "";
+  // Create success element
+  const successHTML = `
+    <div class="success-overlay">
+      <div class="success-container">
+        <img src="./public/checked-circle.svg" class="success-icon" alt="Success" />
+        <p class="success-message">Successfully Saved!</p>
+      </div>
+    </div>
+  `;
+
+  // Add to app container
+  const app = document.getElementById("app");
+  app.insertAdjacentHTML("beforeend", successHTML);
+
+  // Auto remove after delay
+  setTimeout(() => {
+    const successOverlay = document.querySelector(".success-overlay");
+    if (successOverlay) {
+      successOverlay.style.animation = "fadeOut 0.3s ease forwards";
+      successOverlay.addEventListener("animationend", () => {
+        successOverlay.remove();
+      });
+    }
+  }, 2000);
 }
 
 async function init() {
@@ -110,7 +141,10 @@ async function init() {
       const link = tabInfo.url;
       const linkElement = e.target.closest(".link");
       const type = linkElement.dataset.type;
-      await sendRequest(type, link);
+      const { success } = await sendRequest(type, link);
+      if (success) {
+        renderSuccess();
+      }
     }
     tagContainer.addEventListener("click", handleClick);
   }
