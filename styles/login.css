@@ -1,0 +1,55 @@
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.login-container {
+  height: 8rem !important;
+  width: 18rem !important;
+  padding: 0.5rem 0.7rem !important;
+}
+
+.signin-button,
+.create-account-button {
+  background-color: #9c27b0;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 8px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(156, 39, 176, 0.3);
+}
+
+.create-account-button {
+  background-color: #ba68c8;
+}
+
+.signin-button:hover {
+  background-color: #8e24aa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(156, 39, 176, 0.4);
+}
+
+.create-account-button:hover {
+  background-color: #ab47bc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.signin-button:active,
+.create-account-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button-text {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
