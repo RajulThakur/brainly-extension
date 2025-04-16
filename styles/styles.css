@@ -26,6 +26,7 @@
 }
 .heading-container {
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
 }
@@ -64,7 +65,7 @@
   transition: all 30ms;
 }
 .link:hover {
-  background-color: #A6A1F0;
+  background-color: #a6a1f0;
 }
 .input-wrapper {
   display: flex;
@@ -172,4 +173,23 @@
   to {
     opacity: 0;
   }
+}
+
+.logout-button {
+  size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.logout-icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }

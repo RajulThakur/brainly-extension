@@ -1,2 +1,2 @@
-export const API_URL = "http://localhost:4000/api/v1";
-export const URL = "http://localhost:5173";
+export const API_URL = "https://brainly-backend-5grm.onrender.com/api/v1";
+export const URL = "https://bookmarq-dev.vercel.app";

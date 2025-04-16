@@ -1,3 +1,4 @@
+import { URL } from "./const.js";
 import sendRequest from "./helper/sendRequest.js";
 
 async function checkAuthStatus() {
@@ -14,7 +15,7 @@ function renderLoginView() {
   return `
     <div class="heading-container">
       <img src="./public/brain.png" class="image" />
-      <h1 id="heading">Brainly</h1>
+      <h1 id="heading">Bookmarq</h1>
     </div>
     <div class="button-container">
       <a class="signin-button" target="_blank" href="${URL}/auth/extension">
@@ -66,8 +67,11 @@ function renderMainView() {
     <div class="heading-container">
       <div class="logo-container">
         <img src="./public/brain.png" class="image" />
-        <h1 id="heading">Brainly</h1>
+        <h1 id="heading">Bookmarq</h1>
       </div>
+      <button class="logout-button" title="Logout">
+        <img src="./public/logout.svg" alt="Logout" class="logout-icon" />
+      </button>
     </div>
     <div class="input-container">
       <div class="input-wrapper">
@@ -121,12 +125,24 @@ function renderSuccess() {
 async function init() {
   const app = document.getElementById("app");
   const isAuthenticated = await checkAuthStatus();
-  console.log("aurh", isAuthenticated);
+  console.log("auth", isAuthenticated);
   app.innerHTML = isAuthenticated ? renderMainView() : renderLoginView();
+
   if (!isAuthenticated) {
     app.classList.add("login-container");
   } else {
     app.classList.remove("login-container");
+
+    // Add logout button functionality
+    const logoutButton = document.querySelector(".logout-button");
+    if (logoutButton) {
+      logoutButton.addEventListener("click", async () => {
+        await chrome.storage.local.remove("token");
+        console.log("Logged out");
+        location.reload(); // Reload the popup to show the login view
+      });
+    }
+
     const tabInfo = await getCurrentTabInfo();
     if (tabInfo?.url) {
       const urlInput = document.querySelector(".url-input");
@@ -134,6 +150,7 @@ async function init() {
         urlInput.value = tabInfo.url;
       }
     }
+
     const tagContainer = document.querySelector(".tag-container");
     async function handleClick(e) {
       const link = tabInfo.url;

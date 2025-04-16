@@ -3,7 +3,7 @@ const afterLogin=`
         <img
           src="./public/brain.png"
           class="image" />
-        <h1 id="heading">Brainly</h1>
+        <h1 id="heading">Bookmarq</h1>
       </div>
       <div class="input-container">
         <div class="input-wrapper">
