@@ -17,7 +17,7 @@
   "content_scripts": [
     {
       "js": ["/scripts/login.js"],
-      "matches": ["https://brainly-100x.vercel.app/auth/extension/*"]
+      "matches": ["https://bookmarq-dev.vercel.app/auth/extension/*"]
     }
   ],
   "commands": {

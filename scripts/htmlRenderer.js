@@ -21,7 +21,7 @@ const afterLogin=`
         <a
           target="_blank"
           class="link"
-          href="https://brainly-100x.vercel.app/app/tweets">
+          href="https://bookmarq-dev.vercel.app/app/tweets">
           <img
             class="logo"
             src="./public/tweets.svg" />
@@ -30,7 +30,7 @@ const afterLogin=`
         <a
           target="_blank"
           class="link"
-          href="https://brainly-100x.vercel.app/app/links">
+          href="https://bookmarq-dev.vercel.app/app/links">
           <img
             class="logo"
             src="./public/url.svg" />
@@ -39,7 +39,7 @@ const afterLogin=`
         <a
           target="_blank"
           class="link"
-          href="https://brainly-100x.vercel.app/app/videos">
+          href="https://bookmarq-dev.vercel.app/app/videos">
           <img
             class="logo"
             src="./public/film.svg" />
@@ -48,7 +48,7 @@ const afterLogin=`
         <a
           target="_blank"
           class="link"
-          href="https://brainly-100x.vercel.app/app/documents">
+          href="https://bookmarq-dev.vercel.app/app/documents">
           <img
             class="logo"
             src="./public/document.svg" />

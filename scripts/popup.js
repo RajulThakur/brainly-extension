@@ -1,7 +1,5 @@
 import sendRequest from "./helper/sendRequest.js";
 
-// const URL = "https://brainly-100x.vercel.app";
-
 async function checkAuthStatus() {
   try {
     const { token } = await chrome.storage.local.get("token");
