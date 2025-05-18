@@ -1,9 +1,11 @@
+import { URL } from "./const";
+
 const afterLogin=`
 <div class="heading-container">
         <img
-          src="./public/brain.png"
+          src="./public/Logo.svg"
           class="image" />
-        <h1 id="heading">Bookmarq</h1>
+        <h1 id="heading">Linkcaddy</h1>
       </div>
       <div class="input-container">
         <div class="input-wrapper">
@@ -21,7 +23,7 @@ const afterLogin=`
         <a
           target="_blank"
           class="link"
-          href="https://bookmarq-dev.vercel.app/app/tweets">
+          href="${URL}/app/tweets">
           <img
             class="logo"
             src="./public/tweets.svg" />
@@ -30,7 +32,7 @@ const afterLogin=`
         <a
           target="_blank"
           class="link"
-          href="https://bookmarq-dev.vercel.app/app/links">
+          href="${URL}/app/links">
           <img
             class="logo"
             src="./public/url.svg" />
@@ -39,7 +41,7 @@ const afterLogin=`
         <a
           target="_blank"
           class="link"
-          href="https://bookmarq-dev.vercel.app/app/videos">
+          href="${URL}/app/videos">
           <img
             class="logo"
             src="./public/film.svg" />
@@ -48,7 +50,7 @@ const afterLogin=`
         <a
           target="_blank"
           class="link"
-          href="https://bookmarq-dev.vercel.app/app/documents">
+          href="${URL}/app/documents">
           <img
             class="logo"
             src="./public/document.svg" />

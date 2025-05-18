@@ -14,8 +14,8 @@ async function checkAuthStatus() {
 function renderLoginView() {
   return `
     <div class="heading-container">
-      <img src="./public/brain.png" class="image" />
-      <h1 id="heading">Bookmarq</h1>
+      <img src="./public/Logo.svg" class="image" />
+      <h1 id="heading">Linkcaddy</h1>
     </div>
     <div class="button-container">
       <a class="signin-button" target="_blank" href="${URL}/auth/extension">
@@ -66,8 +66,8 @@ function renderMainView() {
   return `
     <div class="heading-container">
       <div class="logo-container">
-        <img src="./public/brain.png" class="image" />
-        <h1 id="heading">Bookmarq</h1>
+        <img src="./public/Logo.svg" class="image" />
+        <h1 id="heading">Linkcaddy</h1>
       </div>
       <button class="logout-button" title="Logout">
         <img src="./public/logout.svg" alt="Logout" class="logout-icon" />
